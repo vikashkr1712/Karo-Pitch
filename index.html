@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karo Pitch — Pitch Your Startup to India's Top Investors</title>
+    <meta name="description" content="Karo Pitch is India's most accessible startup discovery and funding platform for Bharat entrepreneurs. Apply to pitch your startup to top investors.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #2D2D3A;
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        ul { list-style: none; }
+
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary: #7B2FF2;
+            --primary-dark: #6020C5;
+            --primary-light: #A67BFF;
+            --accent: #00C4CC;
+            --accent-dark: #00A3A9;
+            --dark: #1B1B2F;
+            --dark-2: #2D2D3A;
+            --gray-900: #1B1B2F;
+            --gray-700: #4A4A5A;
+            --gray-500: #7C7C8A;
+            --gray-300: #D4D4DB;
+            --gray-100: #F0F0F4;
+            --gray-50: #F8F8FA;
+            --white: #FFFFFF;
+            --gradient-1: linear-gradient(135deg, #7B2FF2 0%, #00C4CC 100%);
+            --gradient-2: linear-gradient(135deg, #F8F8FA 0%, #EDE7FB 100%);
+            --gradient-3: linear-gradient(135deg, #00C4CC 0%, #7B2FF2 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --max-width: 1200px;
+        }
+
+        /* ===== UTILITY ===== */
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+        .section-padding { padding: 100px 0; }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(123,47,242,0.08);
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+        .section-label svg { width: 16px; height: 16px; }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(123,47,242,0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(123,47,242,0.45);
+        }
+        .btn-secondary {
+            background: var(--white);
+            color: var(--dark);
+            border: 2px solid var(--gray-300);
+        }
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(0,196,204,0.35);
+        }
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,196,204,0.45);
+        }
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255,255,255,0.3);
+        }
+        .btn-outline-white {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline-white:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .btn svg { width: 18px; height: 18px; }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideCounter {
+            0% { transform: translateY(100%); opacity: 0; }
+            10% { transform: translateY(0); opacity: 1; }
+            90% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100%); opacity: 0; }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(12px);
+        }
+        .navbar.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            padding: 10px 0;
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            transition: color 0.3s;
+        }
+        .navbar.scrolled .nav-logo { color: var(--dark); }
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .navbar.scrolled .nav-links a { color: var(--gray-700); }
+        .navbar.scrolled .nav-links a:hover { color: var(--primary); }
+        .nav-cta {
+            padding: 10px 24px !important;
+            font-size: 0.85rem !important;
+        }
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .nav-mobile-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            margin: 6px 0;
+            transition: all 0.3s;
+        }
+        .navbar.scrolled .nav-mobile-toggle span { background: var(--dark); }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(170deg, #FFFFFF 0%, #F3EDFF 40%, #E0F7F8 100%);
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(123,47,242,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 6s ease-in-out infinite;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,196,204,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite 2s;
+        }
+        .hero-grid-pattern {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(123,47,242,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(123,47,242,0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        .hero .container { position: relative; z-index: 2; }
+        .hero-content {
+            max-width: 720px;
+            animation: fadeInUp 1s ease;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(123,47,242,0.08);
+            border: 1px solid rgba(123,47,242,0.15);
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+        .hero h1 .highlight {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--gray-500);
+            margin-bottom: 40px;
+            max-width: 560px;
+            line-height: 1.8;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(123,47,242,0.1);
+        }
+        .hero-stat h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .hero-stat h3 span { color: var(--primary); }
+        .hero-stat p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+        .hero-visual {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 420px;
+            height: 420px;
+            animation: fadeInRight 1s ease 0.3s both;
+        }
+        .hero-visual-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(123,47,242,0.12);
+        }
+        .hero-visual-circle:nth-child(1) {
+            width: 100%; height: 100%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-visual-circle:nth-child(2) {
+            width: 80%; height: 80%; top: 10%; left: 10%;
+            border-color: rgba(0,196,204,0.15);
+            animation: float 8s ease-in-out infinite 1s;
+        }
+        .hero-visual-circle:nth-child(3) {
+            width: 60%; height: 60%; top: 20%; left: 20%;
+            border-color: rgba(230,80,120,0.12);
+            animation: float 10s ease-in-out infinite 2s;
+        }
+        .hero-floating-card {
+            position: absolute;
+            background: var(--white);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: float 5s ease-in-out infinite;
+            box-shadow: var(--shadow-md);
+        }
+        .hero-floating-card:nth-child(4) {
+            top: 15%; right: 0;
+            animation-delay: 0.5s;
+        }
+        .hero-floating-card:nth-child(5) {
+            bottom: 25%; left: 0;
+            animation-delay: 1.5s;
+        }
+        .hero-floating-card:nth-child(6) {
+            top: 55%; right: -5%;
+            animation-delay: 2.5s;
+        }
+        .hero-floating-card .icon-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .hero-floating-card .card-text { color: var(--dark); font-size: 0.85rem; font-weight: 500; }
+        .hero-floating-card .card-sub { color: var(--gray-500); font-size: 0.75rem; }
+
+        /* ===== TRUSTED BY / LOGOS ===== */
+        .trusted-bar {
+            padding: 40px 0;
+            background: linear-gradient(90deg, #F3EDFF 0%, #E0F7F8 100%);
+            box-shadow: 0 2px 16px rgba(123,47,242,0.06);
+            border-bottom: 1px solid #E0F7F8;
+        }
+        .trusted-bar .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .trusted-bar p {
+            font-size: 0.9rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .trusted-logos {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .trusted-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.85;
+            transition: color 0.3s, opacity 0.3s;
+            padding: 0 8px;
+        }
+        .trusted-logo:hover {
+            opacity: 1;
+            color: var(--accent);
+            text-shadow: 0 2px 8px rgba(0,196,204,0.12);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about { background: var(--white); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-visual {
+            position: relative;
+        }
+        .about-visual-card {
+            background: linear-gradient(135deg, #F3EDFF 0%, #E0F7F8 100%);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-visual-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(123,47,242,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .about-visual-card .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+        .about-stat-item {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .about-stat-item h3 {
+            font-size: 2rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        .about-stat-item h3 span { color: var(--primary); }
+        .about-stat-item p {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+        .about-content .section-subtitle { margin-bottom: 32px; }
+        .about-features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .about-feature {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .about-feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background: rgba(123,47,242,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+        .about-feature-icon svg { width: 22px; height: 22px; }
+        .about-feature h4 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+        .about-feature p { font-size: 0.9rem; color: var(--gray-500); }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works { background: var(--gray-50); }
+        .how-it-works .section-header { text-align: center; margin-bottom: 64px; }
+        .how-it-works .section-subtitle { margin: 0 auto; }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+        .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 2px;
+            background: linear-gradient(90deg, #7B2FF2, #00C4CC);
+            z-index: 1;
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid #7B2FF2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+        }
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .step-card:hover .step-icon {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .step-icon svg { width: 32px; height: 32px; }
+        .step-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+        .step-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(123,47,242,0.08);
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ===== WHO CAN APPLY ===== */
+        .who-can-apply { background: var(--white); }
+        .who-can-apply .section-header { text-align: center; margin-bottom: 64px; }
+        .who-can-apply .section-subtitle { margin: 0 auto; }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .category-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .category-card:hover::before { transform: scaleX(1); }
+        .category-card:hover { border-color: transparent; }
+        .category-card:hover {
+            border-color: transparent;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .category-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+        .category-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+        .category-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+        /* ===== INVESTORS SECTION ===== */
+        .investors {
+            background: linear-gradient(170deg, #F3EDFF 0%, #E0F7F8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .investors::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(123,47,242,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .investors .container { position: relative; z-index: 2; }
+        .investors .section-label { background: rgba(0,196,204,0.1); color: var(--accent-dark); }
+        .investors .section-title { color: var(--dark); }
+        .investors .section-subtitle { color: var(--gray-500); }
+        .investors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 48px;
+        }
+        .investor-features { display: flex; flex-direction: column; gap: 28px; }
+        .investor-feature {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .investor-feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            background: rgba(123,47,242,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+        .investor-feature-icon svg { width: 22px; height: 22px; }
+        .investor-feature h4 { font-size: 1rem; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+        .investor-feature p { font-size: 0.9rem; color: var(--gray-500); }
+        .investor-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .investor-card {
+            background: var(--white);
+            border: 1px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: var(--shadow-sm);
+        }
+        .investor-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .investor-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 700;
+        }
+        .investor-card h4 { color: var(--dark); font-size: 0.95rem; font-weight: 600; }
+        .investor-card p { color: var(--gray-500); font-size: 0.8rem; margin-top: 2px; }
+
+        /* ===== FEATURED STARTUPS ===== */
+        .featured-startups { background: var(--gray-50); }
+        .featured-startups .section-header { text-align: center; margin-bottom: 64px; }
+        .featured-startups .section-subtitle { margin: 0 auto; }
+        .startups-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .startup-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s ease;
+        }
+        .startup-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .startup-card-header {
+            height: 140px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .startup-card-header .startup-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-md);
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 2;
+        }
+        .startup-card-body { padding: 24px; }
+        .startup-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(123,47,242,0.08);
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .startup-card-body h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+        .startup-card-body p { font-size: 0.9rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 16px; }
+        .startup-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-100);
+        }
+        .startup-meta span {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .startup-meta svg { width: 14px; height: 14px; }
+        .startup-looking {
+            font-size: 0.75rem !important;
+            color: var(--primary) !important;
+            font-weight: 600;
+            background: rgba(123,47,242,0.06);
+            padding: 4px 10px;
+            border-radius: 50px;
+        }
+
+        /* ===== ABOUT KAROSTARTUP ===== */
+        .about-karo { background: var(--white); }
+        .about-karo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .about-karo-content .section-subtitle { margin-bottom: 24px; }
+        .karo-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .karo-highlight {
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .karo-highlight-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+        }
+        .karo-highlight-icon svg { width: 18px; height: 18px; }
+        .karo-highlight h4 { font-size: 0.95rem; font-weight: 600; }
+        .karo-highlight p { font-size: 0.8rem; color: var(--gray-500); }
+        .about-karo-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .karo-visual-card {
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .karo-visual-card:nth-child(1) { background: linear-gradient(135deg, #7B2FF2, #A67BFF); grid-column: span 2; }
+        .karo-visual-card:nth-child(2) { background: var(--gradient-1); }
+        .karo-visual-card:nth-child(3) { background: linear-gradient(135deg, #00C4CC, #00A3A9); }
+        .karo-visual-card h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .karo-visual-card p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+        .karo-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .karo-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gray-50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            transition: all 0.3s;
+        }
+        .karo-social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .karo-social-link svg { width: 18px; height: 18px; }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            background: linear-gradient(170deg, #F3EDFF 0%, #E0F7F8 50%, #FFF 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(123,47,242,0.06) 0%, transparent 60%);
+            border-radius: 50%;
+        }
+        .final-cta .container { position: relative; z-index: 2; }
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+        .final-cta p {
+            font-size: 1.15rem;
+            color: var(--gray-500);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .final-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #2D2D3A;
+            padding: 80px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-brand .nav-logo {
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+        .footer-brand p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 300px;
+        }
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .footer-col a {
+            display: block;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            padding: 6px 0;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.85rem; }
+        .footer-socials { display: flex; gap: 16px; }
+        .footer-socials a {
+            color: rgba(255,255,255,0.3);
+            transition: color 0.3s;
+        }
+        .footer-socials a:hover { color: var(--white); }
+        .footer-socials svg { width: 20px; height: 20px; }
+
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-visual { display: none; }
+            .about-grid,
+            .investors-grid,
+            .about-karo-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid::before { display: none; }
+            .startups-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding { padding: 64px 0; }
+            .nav-links { display: none; }
+            .nav-mobile-toggle { display: block; }
+            .hero { min-height: auto; padding: 140px 0 80px; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .hero-stat { min-width: 120px; }
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+            .startups-grid { grid-template-columns: 1fr; }
+            .investor-cards { grid-template-columns: 1fr; }
+            .about-karo-visual { grid-template-columns: 1fr; }
+            .karo-visual-card:nth-child(1) { grid-column: span 1; }
+            .karo-highlights { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+
+            /* Mobile nav */
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 24px;
+                gap: 16px;
+                box-shadow: var(--shadow-lg);
+                border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            }
+            .nav-links.active a { color: var(--gray-700); }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { width: 100%; justify-content: center; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .final-cta-buttons { flex-direction: column; align-items: center; }
+            .final-cta-buttons .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">KP</div>
+            <span>Karo Pitch</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#startups">Startups</a>
+            <a href="#investors">Investors</a>
+            <a href="#karostartup">KaroStartup</a>
+            <a href="#apply" class="btn btn-primary nav-cta">Apply to Pitch</a>
+        </div>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+    <div class="hero-grid-pattern"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Now Accepting Applications — Season 1
+            </div>
+            <h1>Pitch Your Startup to <span class="highlight">India's Top Investors.</span></h1>
+            <p class="hero-description">
+                Karo Pitch is a platform where founders from across India — especially from Tier-2, Tier-3 cities and Bharat — can pitch their startups directly to investors, raise funding, and scale their businesses.
+            </p>
+            <div class="hero-buttons">
+                <a href="#apply" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+                    Apply to Pitch
+                </a>
+                <a href="#startups" class="btn btn-outline-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                    Explore Startups
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <h3>5000<span>+</span></h3>
+                    <p>Startup Stories Published</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>50<span>+</span></h3>
+                    <p>Investor Partners</p>
+                </div>
+                <div class="hero-stat">
+                    <h3>100<span>+</span></h3>
+                    <p>Cities Across India</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Decorative floating elements -->
+    <div class="hero-visual">
+        <div class="hero-visual-circle"></div>
+        <div class="hero-visual-circle"></div>
+        <div class="hero-visual-circle"></div>
+        <div class="hero-floating-card">
+            <div class="icon-circle" style="background:rgba(123,47,242,0.2);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#A67BFF"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+            </div>
+            <div>
+                <div class="card-text">Funding Raised</div>
+                <div class="card-sub">₹2.5 Cr+ this season</div>
+            </div>
+        </div>
+        <div class="hero-floating-card">
+            <div class="icon-circle" style="background:rgba(0,196,204,0.2);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#00C4CC"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+            </div>
+            <div>
+                <div class="card-text">Founders Applied</div>
+                <div class="card-sub">500+ applications</div>
+            </div>
+        </div>
+        <div class="hero-floating-card">
+            <div class="icon-circle" style="background:rgba(230,80,120,0.2);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#E65078"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+            </div>
+            <div>
+                <div class="card-text">Startups Selected</div>
+                <div class="card-sub">Top 20 pitching live</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUSTED BY BAR ===== -->
+<div class="trusted-bar">
+    <div class="container">
+        <p>Backed by the ecosystem</p>
+        <div class="trusted-logos">
+            <span class="trusted-logo">KaroStartup</span>
+            <span class="trusted-logo">AngelList</span>
+            <span class="trusted-logo">Startup India</span>
+            <span class="trusted-logo">YourStory</span>
+            <span class="trusted-logo">Inc42</span>
+            <span class="trusted-logo">TiE Network</span>
+        </div>
+    </div>
+</div>
+
+<!-- ===== ABOUT KARO PITCH ===== -->
+<section class="about section-padding" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual animate-on-scroll">
+                <div class="about-visual-card">
+                    <div class="stat-grid">
+                        <div class="about-stat-item">
+                            <h3>5000<span>+</span></h3>
+                            <p>Stories Published</p>
+                        </div>
+                        <div class="about-stat-item">
+                            <h3>100<span>+</span></h3>
+                            <p>Cities Reached</p>
+                        </div>
+                        <div class="about-stat-item">
+                            <h3>50<span>+</span></h3>
+                            <p>Investor Partners</p>
+                        </div>
+                        <div class="about-stat-item">
+                            <h3>5<span>yr</span></h3>
+                            <p>Community Building</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content animate-on-scroll">
+                <div class="section-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+                    About Karo Pitch
+                </div>
+                <h2 class="section-title">Bridging the Gap Between Bharat's Founders &amp; Investors</h2>
+                <p class="section-subtitle">
+                    Thousands of founders across India are building amazing businesses — from D2C brands to tech startups — but they lack access to investors, mentorship, and visibility. Karo Pitch connects these founders with investors through curated pitch events and a startup discovery platform.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+                        </div>
+                        <div>
+                            <h4>Structured Pitch Platform</h4>
+                            <p>A closed-room investor pitch event where selected startups present their businesses directly to investors.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                        </div>
+                        <div>
+                            <h4>Bharat-First Mission</h4>
+                            <p>Empowering founders from Tier-2, Tier-3 cities who are building real, impactful businesses but lack access to the startup ecosystem.</p>
+                        </div>
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+                        </div>
+                        <div>
+                            <h4>India's Startup Discovery Hub</h4>
+                            <p>Building India's most accessible startup discovery and funding platform where every great idea gets a fair chance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-it-works section-padding" id="how-it-works">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                How It Works
+            </div>
+            <h2 class="section-title">From Application to Funding in 4 Simple Steps</h2>
+            <p class="section-subtitle">Our streamlined process ensures every deserving startup gets a fair chance to pitch, impress investors, and secure the funding they need to grow.</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card animate-on-scroll">
+                <div class="step-badge">Step 1</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                </div>
+                <h3>Apply with Your Pitch Deck</h3>
+                <p>Submit your startup details and pitch deck through our simple application form.</p>
+            </div>
+            <div class="step-card animate-on-scroll">
+                <div class="step-badge">Step 2</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/></svg>
+                </div>
+                <h3>Get Shortlisted by KaroStartup</h3>
+                <p>Our expert team reviews applications and shortlists the most promising startups.</p>
+            </div>
+            <div class="step-card animate-on-scroll">
+                <div class="step-badge">Step 3</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+                </div>
+                <h3>Pitch Live to Investors</h3>
+                <p>Present your business in a structured, closed-room pitch session in front of top investors.</p>
+            </div>
+            <div class="step-card animate-on-scroll">
+                <div class="step-badge">Step 4</div>
+                <div class="step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+                </div>
+                <h3>Raise Funding &amp; Scale</h3>
+                <p>Connect with the right investors, secure funding, and take your startup to the next level.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHO CAN APPLY ===== -->
+<section class="who-can-apply section-padding" id="categories">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                Who Can Apply
+            </div>
+            <h2 class="section-title">Built for Every Kind of Founder</h2>
+            <p class="section-subtitle">Whether you're running a D2C brand from Jaipur or building a SaaS product from Indore — if you have a business worth pitching, Karo Pitch is for you.</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card animate-on-scroll">
+                <div class="category-icon" style="background: rgba(123,47,242,0.08);">🛍️</div>
+                <h3>D2C Brands</h3>
+                <p>Direct-to-consumer brands disrupting traditional retail with innovative products and digital-first strategies.</p>
+            </div>
+            <div class="category-card animate-on-scroll">
+                <div class="category-icon" style="background: rgba(0,196,204,0.08);">🚀</div>
+                <h3>Consumer Startups</h3>
+                <p>Consumer-facing startups solving everyday problems for millions of Indians with scalable solutions.</p>
+            </div>
+            <div class="category-card animate-on-scroll">
+                <div class="category-icon" style="background: rgba(255,173,51,0.08);">🏭</div>
+                <h3>MSMEs</h3>
+                <p>Micro, small, and medium enterprises driving India's economy with grit, innovation, and localized impact.</p>
+            </div>
+            <div class="category-card animate-on-scroll">
+                <div class="category-icon" style="background: rgba(230,80,120,0.08);">💻</div>
+                <h3>SaaS Startups</h3>
+                <p>Software-as-a-service companies building tools and platforms that power businesses across industries.</p>
+            </div>
+            <div class="category-card animate-on-scroll">
+                <div class="category-icon" style="background: rgba(123,47,242,0.08);">⚙️</div>
+                <h3>Manufacturing Businesses</h3>
+                <p>Innovative manufacturers modernizing production, supply chains, and bringing Make-in-India to the world.</p>
+            </div>
+            <div class="category-card animate-on-scroll">
+                <div class="category-icon" style="background: rgba(0,196,204,0.08);">🇮🇳</div>
+                <h3>Bharat-Focused Startups</h3>
+                <p>Startups building for Bharat — solving real problems for Tier-2, Tier-3 cities and rural India at massive scale.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INVESTORS SECTION ===== -->
+<section class="investors section-padding" id="investors">
+    <div class="container">
+        <div class="section-label">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+            For Investors
+        </div>
+        <h2 class="section-title">Meet Investors Looking for the Next Big Startup.</h2>
+        <p class="section-subtitle">Top angel investors, VCs, and industry leaders attend Karo Pitch events to discover and back the most promising early-stage startups from across India.</p>
+        <div class="investors-grid">
+            <div class="investor-features animate-on-scroll">
+                <div class="investor-feature">
+                    <div class="investor-feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Curated Deal Flow</h4>
+                        <p>Access pre-vetted startups handpicked by the KaroStartup team from across India.</p>
+                    </div>
+                </div>
+                <div class="investor-feature">
+                    <div class="investor-feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+                    </div>
+                    <div>
+                        <h4>Bharat-First Opportunities</h4>
+                        <p>Discover untapped markets and high-potential startups from Tier-2 and Tier-3 cities.</p>
+                    </div>
+                </div>
+                <div class="investor-feature">
+                    <div class="investor-feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+                    </div>
+                    <div>
+                        <h4>Direct Founder Access</h4>
+                        <p>Meet founders live, ask questions in real-time, and make investment decisions faster.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="investor-cards animate-on-scroll">
+                <div class="investor-card">
+                    <div class="investor-avatar">AV</div>
+                    <h4>Angel Investors</h4>
+                    <p>Early-stage backers</p>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-avatar" style="background: linear-gradient(135deg, #00C4CC, #00A3A9);">VC</div>
+                    <h4>Venture Capitalists</h4>
+                    <p>Institutional funds</p>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-avatar" style="background: linear-gradient(135deg, #10B981, #059669);">ME</div>
+                    <h4>Mentors & Experts</h4>
+                    <p>Industry leaders</p>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-avatar" style="background: linear-gradient(135deg, #E65078, #7B2FF2);">CP</div>
+                    <h4>Corporate Partners</h4>
+                    <p>Strategic investors</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FEATURED STARTUPS ===== -->
+<section class="featured-startups section-padding" id="startups">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+                Featured Startups
+            </div>
+            <h2 class="section-title">Discover Startups Ready to Scale</h2>
+            <p class="section-subtitle">Meet the innovative founders who are building the next generation of businesses across India. These startups are ready to pitch and raise funding.</p>
+        </div>
+        <div class="startups-grid">
+            <div class="startup-card animate-on-scroll">
+                <div class="startup-card-header" style="background: linear-gradient(135deg, #EEF2FF, #E0E7FF);">
+                    <div class="startup-logo">🧴</div>
+                </div>
+                <div class="startup-card-body">
+                    <span class="startup-tag">D2C Brand</span>
+                    <h3>NaturBlend</h3>
+                    <p>Organic skincare brand from Jaipur making Ayurvedic beauty products accessible to every Indian household.</p>
+                    <div class="startup-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            Jaipur, Rajasthan
+                        </span>
+                        <span class="startup-looking">Seeking ₹50L</span>
+                    </div>
+                </div>
+            </div>
+            <div class="startup-card animate-on-scroll">
+                <div class="startup-card-header" style="background: linear-gradient(135deg, #F0FDF4, #DCFCE7);">
+                    <div class="startup-logo">🌾</div>
+                </div>
+                <div class="startup-card-body">
+                    <span class="startup-tag">Bharat-Focused</span>
+                    <h3>KisanDirect</h3>
+                    <p>Farm-to-fork marketplace connecting rural farmers directly with urban consumers, cutting middlemen.</p>
+                    <div class="startup-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            Indore, MP
+                        </span>
+                        <span class="startup-looking">Seeking ₹1Cr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="startup-card animate-on-scroll">
+                <div class="startup-card-header" style="background: linear-gradient(135deg, #FEF3C7, #FDE68A);">
+                    <div class="startup-logo">💻</div>
+                </div>
+                <div class="startup-card-body">
+                    <span class="startup-tag">SaaS</span>
+                    <h3>BizStack</h3>
+                    <p>All-in-one business management SaaS for MSMEs — invoicing, inventory, GST, and payments in one platform.</p>
+                    <div class="startup-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            Pune, Maharashtra
+                        </span>
+                        <span class="startup-looking">Seeking ₹75L</span>
+                    </div>
+                </div>
+            </div>
+            <div class="startup-card animate-on-scroll">
+                <div class="startup-card-header" style="background: linear-gradient(135deg, #FCE7F3, #FBCFE8);">
+                    <div class="startup-logo">👗</div>
+                </div>
+                <div class="startup-card-body">
+                    <span class="startup-tag">Consumer Startup</span>
+                    <h3>ThreadCraft</h3>
+                    <p>Sustainable fashion brand empowering local artisans with modern designs and an online-first approach.</p>
+                    <div class="startup-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            Lucknow, UP
+                        </span>
+                        <span class="startup-looking">Seeking ₹40L</span>
+                    </div>
+                </div>
+            </div>
+            <div class="startup-card animate-on-scroll">
+                <div class="startup-card-header" style="background: linear-gradient(135deg, #EDE9FE, #DDD6FE);">
+                    <div class="startup-logo">⚙️</div>
+                </div>
+                <div class="startup-card-body">
+                    <span class="startup-tag">Manufacturing</span>
+                    <h3>MetalForge India</h3>
+                    <p>Precision manufacturing startup using advanced CNC tech to serve automotive and aerospace industries.</p>
+                    <div class="startup-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            Coimbatore, TN
+                        </span>
+                        <span class="startup-looking">Seeking ₹2Cr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="startup-card animate-on-scroll">
+                <div class="startup-card-header" style="background: linear-gradient(135deg, #FEF9C3, #FEF08A);">
+                    <div class="startup-logo">🍜</div>
+                </div>
+                <div class="startup-card-body">
+                    <span class="startup-tag">MSME</span>
+                    <h3>SpiceTown</h3>
+                    <p>Authentic regional spice brand bringing the flavors of India's small towns to kitchens nationwide.</p>
+                    <div class="startup-meta">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                            Nagpur, Maharashtra
+                        </span>
+                        <span class="startup-looking">Seeking ₹30L</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT KAROSTARTUP ===== -->
+<section class="about-karo section-padding" id="karostartup">
+    <div class="container">
+        <div class="about-karo-grid">
+            <div class="about-karo-content animate-on-scroll">
+                <div class="section-label">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg>
+                    Powered By
+                </div>
+                <h2 class="section-title">About KaroStartup</h2>
+                <p class="section-subtitle">
+                    KaroStartup is one of India's largest startup media and storytelling platforms. Over the past 5 years, we have shared thousands of founder journeys, inspiring entrepreneurs across the country and building a thriving community of founders, investors, and ecosystem builders.
+                </p>
+                <p class="section-subtitle">
+                    From covering early-stage founders to spotlight features on breakout startups, KaroStartup has been at the forefront of telling India's entrepreneurial story. Karo Pitch is our next step — turning storytelling into action by connecting founders directly with investors.
+                </p>
+                <div class="karo-highlights">
+                    <div class="karo-highlight">
+                        <div class="karo-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Startup Media Platform</h4>
+                            <p>India's leading startup storytelling hub</p>
+                        </div>
+                    </div>
+                    <div class="karo-highlight">
+                        <div class="karo-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                        </div>
+                        <div>
+                            <h4>5000+ Stories Published</h4>
+                            <p>Thousands of founder journeys shared</p>
+                        </div>
+                    </div>
+                    <div class="karo-highlight">
+                        <div class="karo-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                        </div>
+                        <div>
+                            <h4>Large Founder Community</h4>
+                            <p>Active network across 100+ cities</p>
+                        </div>
+                    </div>
+                    <div class="karo-highlight">
+                        <div class="karo-highlight-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                        </div>
+                        <div>
+                            <h4>5 Years of Impact</h4>
+                            <p>Inspiring entrepreneurs since day one</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="karo-social-links">
+                    <a href="https://www.instagram.com/karo_startup_/" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/karo-startup/" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://x.com/karo_startup" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="Twitter/X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/karostartup" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@karostartup/videos" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="about-karo-visual animate-on-scroll">
+                <div class="karo-visual-card">
+                    <h3>5+ Years</h3>
+                    <p>Building India's largest startup storytelling platform</p>
+                </div>
+                <div class="karo-visual-card">
+                    <h3>5000+</h3>
+                    <p>Startup stories published</p>
+                </div>
+                <div class="karo-visual-card">
+                    <h3>100+</h3>
+                    <p>Cities across India</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta section-padding" id="apply">
+    <div class="container">
+        <div class="animate-on-scroll">
+            <h2>Ready to Pitch Your Startup?</h2>
+            <p>Join India's most accessible startup pitch platform. Whether you're a founder ready to raise funding or an investor looking for the next big opportunity — Karo Pitch is where it all begins.</p>
+            <div class="final-cta-buttons">
+                <a href="mailto:business@karostartup.com?subject=Karo%20Pitch%20Application" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.841m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+                    Apply Now
+                </a>
+                <a href="mailto:business@karostartup.com?subject=Partnership%20Inquiry%20-%20Karo%20Pitch" class="btn btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+                    Partner With Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">
+                    <div class="nav-logo-icon">KP</div>
+                    <span>Karo Pitch</span>
+                </a>
+                <p>India's most accessible startup discovery and funding platform for Bharat entrepreneurs. A KaroStartup initiative.</p>
+                <div class="karo-social-links" style="margin-top: 20px;">
+                    <a href="https://www.instagram.com/karopitch/" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="Karo Pitch Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/karo_startup_/" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="KaroStartup Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://x.com/karo_startup" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="Twitter/X">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@karostartup/videos" target="_blank" rel="noopener noreferrer" class="karo-social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="#about">About Karo Pitch</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#categories">Who Can Apply</a>
+                <a href="#startups">Featured Startups</a>
+                <a href="#investors">For Investors</a>
+            </div>
+            <div class="footer-col">
+                <h4>KaroStartup</h4>
+                <a href="https://karostartup.com" target="_blank" rel="noopener noreferrer">Website</a>
+                <a href="https://www.instagram.com/karo_startup_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/company/karo-startup/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.youtube.com/@karostartup/videos" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:business@karostartup.com">business@karostartup.com</a>
+                <a href="tel:+919315194393">+91 93151 94393</a>
+                <a href="#apply">Apply to Pitch</a>
+                <a href="mailto:business@karostartup.com?subject=Partnership%20Inquiry">Partner With Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Karo Pitch — A KaroStartup Initiative. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/karopitch/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/company/karo-startup/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://x.com/karo_startup" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/karostartup" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@karostartup/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ===== NAVBAR SCROLL EFFECT =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ===== MOBILE NAV TOGGLE =====
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // ===== SCROLL ANIMATIONS =====
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Stagger animations for elements within same section
+                const siblings = entry.target.parentElement.querySelectorAll('.animate-on-scroll');
+                const idx = Array.from(siblings).indexOf(entry.target);
+                entry.target.style.transitionDelay = `${idx * 0.1}s`;
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ===== COUNTER ANIMATION =====
+    function animateCounters() {
+        const counters = document.querySelectorAll('.hero-stat h3, .about-stat-item h3, .karo-visual-card h3');
+        counters.forEach(counter => {
+            const text = counter.textContent;
+            const match = text.match(/(\d+)/);
+            if (!match) return;
+            const target = parseInt(match[0]);
+            const suffix = text.replace(match[0], '');
+            let current = 0;
+            const increment = Math.ceil(target / 60);
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                counter.innerHTML = current + suffix;
+            }, 20);
+        });
+    }
+
+    // Trigger counter animation when hero is visible
+    const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                heroObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    heroObserver.observe(document.querySelector('.hero'));
+</script>
+
+</body>
+</html>
